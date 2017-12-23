@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+	<title>我们的相册</title>
+	<meta name="keywords" content="我爱你">
+	<meta name="description" content="我爱你">
+	<link href="Style/IndexStyle.css" rel="stylesheet" type="text/css" media="screen">
+	<link type="text/css" rel="stylesheet" href="Style/Album.css">
+	<style type="text/css">
+	a,img{border:0;}
+	/* slider */
+	#slider{width:360px;height:450px;margin:0 auto;}
+	#slider img{display:block}
+	#slider-mask{background:url(images/slider.jpg) no-repeat;width:480px;height:675px;margin:40px auto 0 auto;padding-top:100px;position:relative; margin-left:220px}
+	#slider-mask #prev{position:absolute;top:165px;left:60px;cursor:pointer;z-index:99}
+	#slider-mask #next{position:absolute;top:165px;right:60px;cursor:pointer;z-index:99}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div id="logo">
+			<h1><a href="Home.html">Love Anniversary</a></h1>
+			<h2>老婆大人，么么哒！</h2>
+		</div>
+		<div id="menu">
+			<ul>
+				<li ><a href="Home.html" title="爱的首页">Love首页</a></li>
+				<li ><a href="Diary.html" title="我们之间的甜言蜜语">Love蜜语</a></li>
+				<li class="tu"><a href="Album.html"  title="爱的相册">Love相册</a></li>
+				<li><a href="Travel.html"  title="爱的旅行">Love旅游</a></li>
+				<li ><a href="Love.html"  title="爱的表白">Love表白</a></li>
+				<li><a href="Time.html"  title="我们的纪念时" target="_blank">Love时间</a></li>
+			</ul>
+		</div>
+	</div>
+	<hr />
+	<!-- start page -->
+	<div id="page">
+		<div id="slider-mask">
+			<div id="slider">
+				<div><img src="images/Album1.jpg"></div>
+				<div><img src="images/Album2.jpg"></div>
+				<div><img src="images/Album3.jpg"></div>
+				<div><img src="images/Album4.jpg"></div>
+				<div><img src="images/Album5.jpg"></div>
+				<div><img src="images/Album6.jpg"></div>
+				<div><img src="images/Album7.jpg"></div>
+				<div><img src="images/Album8.jpg"></div>
+				<div><img src="images/Album9.jpg"></div>
+				<div><img src="images/Album10.jpg"></div>
+				<div><img src="images/Album11.jpg"></div>
+				<div><img src="images/Album12.jpg"></div>
+				<div><img src="images/Album13.jpg"></div>
+				<div><img src="images/Album14.jpg"></div>
+				<div><img src="images/Album15.jpg"></div>
+				<div><img src="images/Album16.jpg"></div>
+				<div><img src="images/Album17.jpg"></div>
+				<div><img src="images/Album18.jpg"></div>
+				<div><img src="images/Album19.jpg"></div>
+				<div><img src="images/Album20.jpg"></div>
+				<div><img src="images/Album21.jpg"></div>
+				<div><img src="images/Album22.jpg"></div>
+				<div><img src="images/Album23.jpg"></div>
+				<div><img src="images/Album24.jpg"></div>
+				<div><img src="images/Album25.jpg"></div>
+				<div><img src="images/Album26.jpg"></div>
+				<div><img src="images/Album27.jpg"></div>
+				<div><img src="images/Album28.jpg"></div>
+				<div><img src="images/Album29.jpg"></div>
+				<div><img src="images/Album30.jpg"></div>
+				<div><img src="images/Album31.jpg"></div>
+				<div><img src="images/Album32.jpg"></div>
+				<div><img src="images/Album33.jpg"></div>
+				<div><img src="images/Album34.jpg"></div>
+				<div><img src="images/Album35.jpg"></div>
+				<div><img src="images/Album36.jpg"></div>
+				<div><img src="images/Album37.jpg"></div>
+				<div><img src="images/Album38.jpg"></div>
+				<div><img src="images/Album39.jpg"></div>
+				<div><img src="images/Album40.jpg"></div>
+				<div><img src="images/Album41.jpg"></div>
+				<div><img src="images/Album42.jpg"></div>
+				<div><img src="images/Album43.jpg"></div>
+				<div><img src="images/Album44.jpg"></div>
+				<div><img src="images/Album45.jpg"></div>
+				<div><img src="images/Album46.jpg"></div>
+			</div>
+			<img src="images/prev.png" alt="" id="prev">
+			<img src="images/next.png" alt="" id="next">
+		</div>
+	</div>
+	<!-- end page -->
+</body>
+<script type="text/javascript" src="Script/jquery.min.js"></script>
+<script type="text/javascript" src="Script/jquery.cycle.all.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#slider').cycle({
+            prev:   '#prev',
+            next:   '#next',
+            timeout: 3500
+        });
+    });
+</script>
+</html>

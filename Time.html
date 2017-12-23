@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>给晓凡的惊喜</title>
+    <link href="Script/Time/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="Script/Time/jquery.js"></script>
+    <script type="text/javascript" src="Script/Time/garden.js"></script>
+    <script type="text/javascript" src="Script/Time/functions.js"></script>
+	<script type="text/javascript" charset="UTF-8" async="" src="Script/Time/jisuanqi.js"></script>
+	<link type="text/css" rel="stylesheet" href="chrome-extension://olmanbchlogbfhhgimnombopppdooidm/style/style.css">
+	<script type="text/javascript" src="Script/Time/tule.js"></script>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="content" style="width: 1110px; height: 625px; margin-top: 10px; margin-left: 116.5px;">
+            <div id="code" style="margin-top: 112.5px;">
+                <span class="comments">/**</span><br/>
+                <span class="space"><span class="comments">*2017-03-26,</span></span><br/>
+                <span class="space"><span class="comments">*2117-forever-</span></span><br/>
+                <span class="space"><span class="comments">对你甜言蜜语说说情话，</span></span><br/>
+                <span class="space"><span class="comments">发自内心的说出我爱你，</span></span><br/>
+                <span class="space"><span class="comments">和你在一起，是最美好的爱情。</span></span><br/>
+                <span class="space"><span class="comments">惦记，无声，却很甜；问候，平常，却很暖；信任，无言，却最真；爱你，久远，却最诚。</span></span><br/>
+                <span class="space"><span class="comments">感恩未来的日子有你的陪伴！</span></span><br/>
+                <span class="comments">**/</span>
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden" width="670" height="625"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        亲爱的，这是我们相爱在一起的时光。
+                        <div id="elapseClock"><span class="digit">17</span> days <span class="digit">02</span> hours <span class="digit">28</span> minutes <span class="digit">06</span> seconds</div>
+                    </div>
+                    <div id="loveu">
+                        爱你到天荒地老、海枯石烂<br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function CurentTime() {
+            var now = new Date();
+            var year = now.getFullYear();       //年
+            var month = now.getMonth() + 1;     //月
+            var day = now.getDate();            //日
+            var hh = now.getHours();            //时
+            var mm = now.getMinutes();          //分
+            var se = now.getSeconds();          //秒
+            var clock = year + "-";
+            if (month < 10)
+            {
+                clock += "0";
+            }
+            clock += month + "-";
+            if (day < 10)
+            {
+                clock += "0";
+            }
+            clock += day + " ";
+            if (hh < 10)
+            {
+                clock += "0";
+            }
+            clock += hh + ":";
+            if (mm < 10)
+            {
+                clock += '0';
+            }
+            clock += mm + ":";
+            if (se < 10)
+            {
+                clock += "0";
+            }
+            clock += se;
+            return (clock);
+        }
+        function getLoveTime()
+        {
+            var strstartime = '2017-03-26 01:07:00';
+            var nowtime = CurentTime(); //获取服务器时间
+            //alert(nowtime)
+            var serverTime = new Date(nowtime); //服务器端时间
+            var StartTime = new Date(strstartime);
+            //alert(serverTime.getTime()); alert(StartTime.getTime());
+            var leftsecond = parseInt((serverTime.getTime() - StartTime.getTime()) / 1000);
+            if (leftsecond < 0)
+            {
+                leftsecond = 0;
+            }
+            day = parseInt(leftsecond / 3600 / 24); //剩余天数
+            hour = parseInt((leftsecond / 3600) % 24); //剩余小时
+            minute = parseInt((leftsecond / 60) % 60); //剩余分钟
+            second = parseInt(leftsecond % 60); //剩余秒
+            var res = day + 'days' + hour + 'hours' + minute + 'minutes' + second + 'seconds';
+            //alert(res);
+            return res;
+        }
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date('2017-3-26').getTime();
+        //var together = new Date();
+        //together.setHours(0);
+        //together.setMinutes(0);
+        //together.setSeconds(0);
+        //together.setMilliseconds(0);
+        //together = together.toString().replace(/-/g, '/');
+        if (!document.createElement('canvas').getContext)
+        {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        }
+        else
+        {
+            setTimeout(function ()
+            {
+                startHeartAnimation();
+            }, 5000);
+            timeElapse(together);
+            setInterval(function ()
+            {
+                timeElapse(together);
+            }, 500);
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+    <div style="display:none">
+        <script src="Script/Time/stat.php"></script>
+    </div>
+</body>
+</html>
